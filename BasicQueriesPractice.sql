@@ -102,3 +102,34 @@ SELECT * FROM products
 SELECT customer_name , country FROM Customers; -- will fetch only customer_name and country columns all record.
 
 SELECT DISTINCT country FROM Customers; -- it will fetch only unique record of column country.
+
+/*
+We can also use the DISTINCT keyword in combination with the COUNT statement, which in the 
+example below will return the number of different countries there are in the customers table.
+*/
+SELECT COUNT (DISTINCT country) FROM customers;
+
+
+-- Sort Data : using ORDER BY 
+/*
+The ORDER BY keyword is used to sort the result in ascending or descending order.
+
+The ORDER BY keyword sorts the records in ascending order by default(incr order). 
+To sort the records in descending order, use the DESC keyword.
+*/
+
+SELECT * FROM products
+		ORDER BY price; -- default ASC order
+SELECT * FROM products  ORDER BY product_id DESC;
+-- For string values the ORDER BY keyword will order alphabetically:
+SELECT * FROM products ORDER BY product_name;
+
+--  LIMIT Clause : It us used to limit the fetch record of column
+SELECT * FROM customers LIMIT 3; -- only fetch 3 record of all the column of table customers.
+
+-- OFFSET Clause : The OFFSET clause is used to specify where to start selecting the records to return.
+-- If you want to return 20 records, but start at number 40, you can use both LIMIT and OFFSET.
+-- Note: The first record is number 0, so when you specify OFFSET 40 it means starting at record number 41.
+SELECT * FROM customers LIMIT 4 OFFSET 2 ; -- so it will start from 3rd customer and go 3,4,5,6 means limit 4.
+
+
