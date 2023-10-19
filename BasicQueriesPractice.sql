@@ -1,3 +1,6 @@
+
+-- Learning syntax and basic concepts with Queries
+
 CREATE TABLE LearningTable(
 
 	  category_id SERIAL NOT NULL PRIMARY KEY,
