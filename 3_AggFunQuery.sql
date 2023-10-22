@@ -107,4 +107,5 @@ WHERE product_name BETWEEN 'Chais' AND 'Men' ORDER By product_name;
 SELECT * FROM orders 
 WHERE order_date BETWEEN '2021-04-12' AND '2023-10-12'
 
+-- how to give column name with space between the words : Alias must be then in double quote.
 SELECT product_name AS "PI PN" FROM Products
