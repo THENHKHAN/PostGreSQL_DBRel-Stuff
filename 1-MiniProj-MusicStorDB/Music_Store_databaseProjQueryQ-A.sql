@@ -98,3 +98,14 @@ SELECT c.customer_id , c.first_name , c.last_name , SUM(i.total) AS total_Spend_
 
 			-- 			Question set-1 Moderate LEVEL *****************************
 
+
+-- Question-1 : 
+
+/*  Write query to return the email, first name, last name, & Genre of all Rock Music 
+listeners. Return your list ordered alphabetically by email starting with  */
+
+SELECT * FROM genre where name='Rock'
+
+
+
+
