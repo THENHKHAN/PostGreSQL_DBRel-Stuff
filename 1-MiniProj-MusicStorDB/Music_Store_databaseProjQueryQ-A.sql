@@ -104,6 +104,8 @@ SELECT c.customer_id , c.first_name , c.last_name , SUM(i.total) AS total_Spend_
 /*  Write query to return the email, first name, last name, & Genre of all Rock Music 
 listeners. Return your list ordered alphabetically by email starting with A  */
 
+-- we have see the schema so that we can get idea how to join and make condition to get the required data from other tables
+
 SELECT * FROM genre where name='Rock'
 
 
