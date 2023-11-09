@@ -89,3 +89,32 @@ CREATE TABLE IF NOT EXISTS countries (
 -- 		CONSTRAINT valid_countries CHECK (country_name IN ('Italy' , 'India' , 'China')) -- valid_countries - this will be the constraint name
 )
 SELECT * FROM countries;
+
+/* 8. Write a SQL statement to create a table named countries including columns country_id,country_name and region_id and make sure that no duplicate data against 
+column country_id will be allowed at the time of insertion.
+
+*/
+DROP TABLE countries  ;
+
+CREATE TABLE IF NOT EXISTS countries (
+		country_id VARCHAR(3) NOT NULL UNIQUE ,
+		country_name VARCHAR(45) NOT NULL ,
+		region_id DECIMAL(10,0) NOT NULL	
+	-- alternate= UNIQUE(country_id)
+);
+-- create index testIndex on countries (country_name); -- how to make index on the specified column
+-- select tableName,indexName,indexDef from pg_indexes where schemaName='public' order by  tableName , indexName; -- to know all indices in this db
+-- DROP INDEX testIndex ;
+
+/* 9. Write a SQL statement to create a table named jobs including columns job_id, job_title, min_salary and max_salary, and make sure that, the default value for job_title 
+is blank and min_salary is 8000 and max_salary is NULL will be entered automatically at the time of insertion if no value assigned for the specified columns.
+*/
+DROP TABLE jobs;
+
+CREATE TABLE IF NOT EXISTS jobs (
+	job_id  varchar(10) NOT NULL , 
+	job_title varchar(35) NOT NULL DEFAULT ' ',
+	min_salary DECIMAL(6,0) NOT NULL DEFAULT 8000,
+	max_salary Decimal(6,0) NOT NULL DEFAULT NULL
+);
+SELECT * FROM jobs; 
