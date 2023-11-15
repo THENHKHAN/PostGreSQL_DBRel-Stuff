@@ -118,3 +118,40 @@ CREATE TABLE IF NOT EXISTS jobs (
 	max_salary Decimal(6,0) NOT NULL DEFAULT NULL
 );
 SELECT * FROM jobs; 
+
+/* 10. Write a SQL statement to create a table named countries including columns country_id, country_name and region_id and make sure that the country_id column will be a key field 
+which will not contain any duplicate data at the time of insertion.
+*/
+DROP TABLE iF EXISTS countries;
+
+CREATE TABLE countries (
+
+		country_id VARCHAR(3) NOT NULL UNIQUE ,
+		country_name VARCHAR(45) NOT NULL ,
+		region_id DECIMAL(10,0) NOT NULL,	
+		PRIMARY KEY (country_id)		
+)
+
+/* 11. Write a SQL statement to create a table countries including columns country_id, country_name and region_id and make sure that the column country_id will be unique and 
+store an auto-incremented value.
+*/
+DROP TABLE IF EXISTS countries
+
+CREATE TABLE IF NOT EXISTS countries (
+
+		country_id SERIAL NOT NULL UNIQUE , -- Storage Size : 4 Bytes , RANGE: 1 to 2,147,483,647
+		country_name VARCHAR(45) NOT NULL ,
+		region_id DECIMAL(10,0) NOT NULL,
+		PRIMARY KEY (country_id)
+)
+
+/* 12. Write a SQL statement to create a table countries including columns country_id, country_name and region_id and make 
+sure that the combination of columns country_id and region_id will be unique.
+*/
+CREATE TABLE IF NOT EXISTS countries(
+
+		country_id SERIAL NOT NULL PRIMARY KEY, -- Storage Size : 4 Bytes , RANGE: 1 to 2,147,483,647
+		country_name VARCHAR(45) NOT NULL ,
+		region_id DECIMAL(10,0) NOT NULL,
+		UNIQUE (country_id,country_name,region_id)
+)
