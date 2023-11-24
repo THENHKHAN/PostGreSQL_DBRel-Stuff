@@ -155,3 +155,31 @@ CREATE TABLE IF NOT EXISTS countries(
 		region_id DECIMAL(10,0) NOT NULL,
 		UNIQUE (country_id,country_name,region_id)
 )
+
+/* 13. Write a SQL statement to create a table job_history including columns employee_id, start_date, end_date, job_id and department_id and make sure that, 
+the employee_id column does not contain any duplicate value at the time of insertion and the foreign key column job_id contain only those values which exist in the jobs table.
+Note: structure of the table jobs was already given ;
+*/
+-- so lets 1st create the existing job table structure
+DROP TABLE IF EXISTS jobs;
+
+CREATE TABLE IF NOT EXISTS jobs (
+		
+		job_id  varchar(10) NOT NULL DEFAULT '', 
+		job_title varchar(35) NOT NULL ,
+		min_salary DECIMAL(6,0)  DEFAULT NULL,
+		max_salary Decimal(6,0)  DEFAULT NULL,
+		PRIMARY KEY (job_id)
+)
+
+CREATE TABLE IF NOT EXISTS job_history (
+
+		employee_id DECIMAL (10,0) UNIQUE NOT NULL,
+		start_date DATE NOT NULL,
+		end_date DATE NOT NULL ,
+		job_id varchar(10) NOT NULL,
+		department_id DECIMAL(10,0) DEFAULT NULL,
+		PRIMARY KEY (employee_id),
+		CONSTRAINT job_history_job_id_fk
+				FOREIGN KEY (job_id) REFERENCES  jobs (job_id)	
+)
