@@ -1,0 +1,13 @@
+
+--------------------------------  BY Practice --------------------------------------------
+https://www.sql-practice.com/
+
+--> How to Extract Date: Year YYYY , month mm in Char well using to_Char, Days dd
+--> how to find length of string. 
+--> Use of On and Using keywords in PostgreSQL
+--> Count , Group By , Written ORDER  : SELECT → JOIN → WHERE → GROUP BY → HAVING →SELECT(if used) ->  ORDER BY -> LIMIT / OFFSET (if used)
+--> Concatenate, with function as well as || Operator .
+ 
+
+
+               
